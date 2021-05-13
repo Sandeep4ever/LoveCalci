@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love calculater </title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0,
+                        0.3)), url(/truelove.jpg);
+            background-repeat: no-repeat;
+
+            background-position: center;
+
+            position: relative;
+
+        }
+
+        header {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, 50%);
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="card w-50 m-auto text-center">
+            <div class="card-header bg-danger text-white">LOVE CALCULATOR</div>
+            <div class="card-body">
+                <form class="form-inline w-75 m-auto text-center" action="">
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name" class="form-controm text-center" id="name">
+                    </div>
+                    <div> <span class="pl-4 pr-4"> + </span></div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Love Name" class="form-controm text-center" id="lname">
+                    </div>
+                </form>
+                <br>
+                <div class="w-50 m-auto">
+                    <button class="btn btn-success w-50" onclick="loveper()">Click</button>
+                </div>
+                <br>
+                <div>
+                    <input type="text" id="lovevalue" class="form-control
+                    text-center w-25 m-auto" placeholder="Love percentage">
+                </div>
+            </div>
+            <div class="card-footer  bg-danger text-white">God Bless Your Relationship</div>
+        </div>
+
+    </header>
+    <script>
+        function loveper() {
+            //for validation 
+            var name = document.getElementById("name").value;
+            var lname = document.getElementById("lname").value;
+
+            if (name == "") {
+                alert("please enter your name");
+            } else if (name.length <= 2) {
+                alert("Min length is 3")
+            } else if (!isNaN(name)) {
+                alert("number is not allow")
+            } else if (lname == "") {
+                alert("please enter your name");
+            } else if (lname.length <= 2) {
+                alert("Min length is 3")
+            } else if (!isNaN(lname)) {
+                alert("number is not allow")
+            } else {
+                var lovedata = Math.random() * 100;
+                lovedata = Math.floor(lovedata);
+                document.getElementById("lovevalue").value = lovedata + "%";
+
+            }
+
+
+
+
+        }
+    </script>
+</body>
+
+</html>
